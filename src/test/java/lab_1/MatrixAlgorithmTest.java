@@ -8,17 +8,15 @@ class MatrixAlgorithmTest {
 
   @Test
   void Should_Sum_With_Only_Negative_Numbers() {
-    Matrix matrix = new Matrix(4, 4, new int[]{-1, -1, 2, 5});
+    Matrix matrix = new Matrix(2, 2, new int[]{-1, -1});
     matrix.setExpectedMatrix(new int[][]{
-        {4, 3, 2, 5},
-        {4, 3, 2, 5},
-        {4, 3, 2, 5},
-        {4, 3, 2, 5}
+        {-2, -3},
+        {-2, -3}
     });
 
     matrix.algorithmToSumNegativeNumbers();
-
-    Assertions.assertArrayEquals(matrix.getMatrix(), matrix.getExpectedMatrix());
+    System.out.println(matrix);
+    Assertions.assertArrayEquals(matrix.getExpectedMatrix(), matrix.getMatrix());
   }
 
   @Test
@@ -28,7 +26,7 @@ class MatrixAlgorithmTest {
 
     matrix.algorithmToSumNegativeNumbers();
 
-    Assertions.assertArrayEquals(matrix.getMatrix(), matrix.getExpectedMatrix());
+    Assertions.assertArrayEquals( matrix.getExpectedMatrix(), matrix.getMatrix());
   }
 
   @Test
