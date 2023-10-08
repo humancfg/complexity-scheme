@@ -1,6 +1,5 @@
 package lab_1;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -9,8 +8,13 @@ class MatrixAlgorithmTest {
 
   @Test
   void Should_Sum_With_Only_Negative_Numbers() {
-    Matrix matrix = new Matrix(2, 2, new int[]{-1, -1});
-    matrix.setExpectedMatrix(new int[][]{{-2, -3}, {-2, -3}});
+    Matrix matrix = new Matrix(4, 4, new int[]{-1, -1, 2, 5});
+    matrix.setExpectedMatrix(new int[][]{
+        {4, 3, 2, 5},
+        {4, 3, 2, 5},
+        {4, 3, 2, 5},
+        {4, 3, 2, 5}
+    });
 
     matrix.algorithmToSumNegativeNumbers();
 

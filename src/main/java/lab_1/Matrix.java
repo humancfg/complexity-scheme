@@ -14,7 +14,7 @@ public class Matrix {
     fillRows(rowsValues);
   }
 
-  public void fillRows(int[] values) {
+  private void fillRows(int[] values) {
     for (int[] rowArray : matrix) {
       System.arraycopy(values, 0, rowArray, 0, rowArray.length);
     }
@@ -25,7 +25,7 @@ public class Matrix {
     for (int[] rowArray : matrix) {
       for (int index = 1; index < rowArray.length; index++) {
         if (isNegative(rowArray[0])) {
-          rowArray[0] = sumCurrentNumWithPreviousNum(rowArray[0], rowArray[index- 1]);
+          rowArray[0] = sumCurrentNumWithPreviousNum(rowArray[0], rowArray[rowArray.length - 1]);
         }
         if (isNegative(rowArray[index])) {
           rowArray[index] = sumCurrentNumWithPreviousNum(rowArray[index], rowArray[index - 1]);
@@ -52,5 +52,10 @@ public class Matrix {
 
   public int[][] getMatrix() {
     return matrix;
+  }
+
+  @Override
+  public String toString() {
+    return Arrays.deepToString(matrix);
   }
 }
